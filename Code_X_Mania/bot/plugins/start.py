@@ -11,7 +11,7 @@ db = Database(Var.DATABASE_URL, Var.SESSION_NAME)
 from pyshorteners import Shortener
 
 def get_shortlink(url):
-   shortlink = False 
+   shortlink = True 
    try:
       shortlink = Shortener().dagd.short(url)
    except Exception as err:
