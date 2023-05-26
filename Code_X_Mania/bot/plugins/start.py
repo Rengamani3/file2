@@ -9,6 +9,7 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram.errors import UserNotParticipant
 db = Database(Var.DATABASE_URL, Var.SESSION_NAME)
 from pyshorteners import Shortener
+from pyrogram.enums.parse_mode import ParseMode
 
 def get_shortlink(url):
    shortlink = False 
@@ -36,7 +37,7 @@ async def start(b, m):
                     await b.send_message(
                         chat_id=m.chat.id,
                         text="__𝓢𝓞𝓡𝓡𝓨, 𝓨𝓞𝓤 𝓐𝓡𝓔 𝓐𝓡𝓔 𝓑𝓐𝓝𝓝𝓔𝓓 𝓕𝓡𝓞𝓜 𝓤𝓢𝓘𝓝𝓖 𝓜𝓔. 𝓒ᴏɴᴛᴀᴄᴛ ᴛʜᴇ 𝓓ᴇᴠᴇʟᴏᴘᴇʀ__\n\n @Dcstreambot **𝙃𝙚 𝙬𝙞𝙡𝙡 𝙝𝙚𝙡𝙥 𝙮𝙤𝙪**",
-                        parse_mode="Markdown",
+                        parse_mode=ParseMode.HTML,
                         disable_web_page_preview=True
                     )
                     return
@@ -51,14 +52,14 @@ async def start(b, m):
                             ]
                         ]
                     ),
-                    parse_mode="HTML"
+                    parse_mode=ParseMode.HTML
                 )
                 return
             except Exception:
                 await b.send_message(
                     chat_id=m.chat.id,
                     text="<i>𝓢𝓸𝓶𝓮𝓽𝓱𝓲𝓷𝓰 𝔀𝓮𝓷𝓽 𝔀𝓻𝓸𝓷𝓰</i> <b> <a href='http://t.me/Dcstreambot'>CLICK HERE FOR SUPPORT </a></b>",
-                    parse_mode="HTML",
+                    parse_mode=ParseMode.HTML,
                     disable_web_page_preview=True)
                 return
         await m.reply_text(
@@ -69,7 +70,7 @@ async def start(b, m):
 <i><b>It is your responsibility to use wisely I dont take responsibilities of any voilations(of any kind)</i>\n
 <i><u>𝗪𝗔𝗥𝗡𝗜𝗡𝗚 🚸</u></i>\n
 <b>Dont Spam.</b>""",
-            parse_mode="HTML",
+            parse_mode=ParseMode.HTML,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup( [ [InlineKeyboardButton('Owner', url=f"https://t.me/selfiebd"),
                                                                                        InlineKeyboardButton('Follow ', url='https://t.me/Dcstreambot') ] ]  ) )
@@ -84,7 +85,7 @@ async def start(b, m):
                     await b.send_message(
                         chat_id=m.chat.id,
                         text="**Sᴏʀʀʏ Sɪʀ, Yᴏᴜ ᴀʀᴇ Bᴀɴɴᴇᴅ ᴛᴏ ᴜsᴇ ᴍᴇ. Qᴜɪᴄᴋʟʏ ᴄᴏɴᴛᴀᴄᴛ** @Dcstreambot",
-                        parse_mode="Markdown",
+                        parse_mode=ParseMode.Markdown,
                         disable_web_page_preview=True
                     )
                     return
@@ -103,14 +104,14 @@ async def start(b, m):
                             ]
                         ]
                     ),
-                    parse_mode="Markdown"
+                    parse_mode=ParseMode.Markdown
                 )
                 return
             except Exception:
                 await b.send_message(
                     chat_id=m.chat.id,
                     text="**Sᴏᴍᴇᴛʜɪɴɢ ᴡᴇɴᴛ Wʀᴏɴɢ. Cᴏɴᴛᴀᴄᴛ ᴍᴇ** [Dcstreambot](https://t.me/Dcstreambot).",
-                    parse_mode="Markdown",
+                    parse_mode=ParseMode.Markdown,
                     disable_web_page_preview=True)
                 return
 
@@ -158,7 +159,7 @@ async def start(b, m):
 
         await m.reply_text(
             text=msg_text.format(file_name, file_size, online_link, stream_link),
-            parse_mode="HTML",
+            parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🖥 STREAM", url=stream_link), #Stream Link
                                                 InlineKeyboardButton('Dᴏᴡɴʟᴏᴀᴅ 📥', url=online_link)]]) #Download Link
         )
@@ -179,7 +180,7 @@ async def help_handler(bot, message):
                 await bot.send_message(
                     chat_id=message.chat.id,
                     text="<i>Sᴏʀʀʏ Sɪʀ, Yᴏᴜ ᴀʀᴇ Bᴀɴɴᴇᴅ FROM USING ᴍᴇ. Cᴏɴᴛᴀᴄᴛ ᴛʜᴇ Dᴇᴠᴇʟᴏᴘᴇʀ</i>",
-                    parse_mode="HTML",
+                    parse_mode=ParseMode.HTML,
                     disable_web_page_preview=True
                 )
                 return
@@ -194,20 +195,20 @@ async def help_handler(bot, message):
                         ]
                     ]
                 ),
-                parse_mode="Markdown"
+                parse_mode=ParseMode.Markdown
             )
             return
         except Exception:
             await bot.send_message(
                 chat_id=message.chat.id,
                 text="__Sᴏᴍᴇᴛʜɪɴɢ ᴡᴇɴᴛ Wʀᴏɴɢ. Cᴏɴᴛᴀᴄᴛ ᴍᴇ__ Dcstreambot](https://t.me/Dcstreambot).",
-                parse_mode="Markdown",
+                parse_mode=ParseMode.Markdown,
                 disable_web_page_preview=True)
             return
    
     await message.reply_text(
        text="Send me any file/media from telegram, I'll provide external direct download link..",
-            parse_mode="HTML",
+            parse_mode=ParseMode.HTML,
             
           reply_markup=InlineKeyboardMarkup(
             [
