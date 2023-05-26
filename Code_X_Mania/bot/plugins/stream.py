@@ -10,6 +10,8 @@ from pyrogram.errors import FloodWait, UserNotParticipant
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 db = Database(Var.DATABASE_URL, Var.SESSION_NAME)
 from pyshorteners import Shortener
+from pyrogram.enums.parse_mode import ParseMode
+
 
 
 
@@ -36,7 +38,7 @@ async def private_receive_handler(c: Client, m: Message):
                 await c.send_message(
                     chat_id=m.chat.id,
                     text="__Sᴏʀʀʏ Sɪʀ, Yᴏᴜ ᴀʀᴇ Bᴀɴɴᴇᴅ ᴛᴏ ᴜsᴇ ᴍᴇ.__\n\n  **Cᴏɴᴛᴀᴄᴛ Dᴇᴠᴇʟᴏᴘᴇʀ @Dcstreambot Tʜᴇʏ Wɪʟʟ Hᴇʟᴘ Yᴏᴜ**",
-                    parse_mode="markdown",
+                    parse_mode=ParseMode.Markdown,
                     disable_web_page_preview=True
                 )
                 return
@@ -51,14 +53,14 @@ async def private_receive_handler(c: Client, m: Message):
                         ]
                     ]
                 ),
-                parse_mode="HTML"
+                parse_mode=ParseMode.HTML
             )
             return
         except Exception:
             await c.send_message(
                 chat_id=m.chat.id,
                 text="**Sᴏᴍᴇᴛʜɪɴɢ ᴡᴇɴᴛ Wʀᴏɴɢ. Cᴏɴᴛᴀᴄᴛ ᴍʏ ʙᴏss** @Dcstreambot",
-                parse_mode="markdown",
+                parse_mode=ParseMode.Markdown,
                 disable_web_page_preview=True)
             return
     try:
@@ -106,7 +108,7 @@ async def private_receive_handler(c: Client, m: Message):
         await log_msg.reply_text(text=f"**RᴇQᴜᴇꜱᴛᴇᴅ ʙʏ :** [{m.from_user.first_name}](tg://user?id={m.from_user.id})\n**Uꜱᴇʀ ɪᴅ :** `{m.from_user.id}`\n**Dᴏᴡɴʟᴏᴀᴅ ʟɪɴᴋ :** {stream_link}", disable_web_page_preview=True, parse_mode="Markdown", quote=True)
         await m.reply_text(
             text=msg_text.format(file_name, file_size, online_link, stream_link),
-            parse_mode="HTML", 
+            parse_mode=ParseMode.HTML, 
             quote=True,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🖥 STREAM", url=stream_link), #Stream Link
@@ -130,7 +132,7 @@ async def channel_receive_handler(bot, broadcast):
         await log_msg.reply_text(
             text=f"**Cʜᴀɴɴᴇʟ Nᴀᴍᴇ:** `{broadcast.chat.title}`\n**Cʜᴀɴɴᴇʟ ID:** `{broadcast.chat.id}`\n**Rᴇǫᴜᴇsᴛ ᴜʀʟ:** {stream_link}",
             quote=True,
-            parse_mode="Markdown"
+            parse_mode=ParseMode.Markdown
         )
         await bot.edit_message_reply_markup(
             chat_id=broadcast.chat.id,
@@ -147,7 +149,7 @@ async def channel_receive_handler(bot, broadcast):
         await asyncio.sleep(w.x)
         await bot.send_message(chat_id=Var.BIN_CHANNEL,
                              text=f"Gᴏᴛ FʟᴏᴏᴅWᴀɪᴛ ᴏғ {str(w.x)}s from {broadcast.chat.title}\n\n**Cʜᴀɴɴᴇʟ ID:** `{str(broadcast.chat.id)}`",
-                             disable_web_page_preview=True, parse_mode="Markdown")
+                             disable_web_page_preview=True, parse_mode=ParseMode.Markdown)
     except Exception as e:
-        await bot.send_message(chat_id=Var.BIN_CHANNEL, text=f"**#ᴇʀʀᴏʀ_ᴛʀᴀᴄᴇʙᴀᴄᴋ:** `{e}`", disable_web_page_preview=True, parse_mode="Markdown")
+        await bot.send_message(chat_id=Var.BIN_CHANNEL, text=f"**#ᴇʀʀᴏʀ_ᴛʀᴀᴄᴇʙᴀᴄᴋ:** `{e}`", disable_web_page_preview=True, parse_mode=ParseMode.Markdown)
         print(f"Cᴀɴ'ᴛ Eᴅɪᴛ Bʀᴏᴀᴅᴄᴀsᴛ Mᴇssᴀɢᴇ!\nEʀʀᴏʀ:  **Give me edit permission in updates and bin Chanell{e}**")
