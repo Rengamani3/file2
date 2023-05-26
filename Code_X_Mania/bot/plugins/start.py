@@ -36,7 +36,7 @@ async def start(b, m):
                     await b.send_message(
                         chat_id=m.chat.id,
                         text="__𝓢𝓞𝓡𝓡𝓨, 𝓨𝓞𝓤 𝓐𝓡𝓔 𝓐𝓡𝓔 𝓑𝓐𝓝𝓝𝓔𝓓 𝓕𝓡𝓞𝓜 𝓤𝓢𝓘𝓝𝓖 𝓜𝓔. 𝓒ᴏɴᴛᴀᴄᴛ ᴛʜᴇ 𝓓ᴇᴠᴇʟᴏᴘᴇʀ__\n\n @Dcstreambot **𝙃𝙚 𝙬𝙞𝙡𝙡 𝙝𝙚𝙡𝙥 𝙮𝙤𝙪**",
-                        parse_mode="markdown",
+                        parse_mode="Markdown",
                         disable_web_page_preview=True
                     )
                     return
@@ -84,7 +84,7 @@ async def start(b, m):
                     await b.send_message(
                         chat_id=m.chat.id,
                         text="**Sᴏʀʀʏ Sɪʀ, Yᴏᴜ ᴀʀᴇ Bᴀɴɴᴇᴅ ᴛᴏ ᴜsᴇ ᴍᴇ. Qᴜɪᴄᴋʟʏ ᴄᴏɴᴛᴀᴄᴛ** @Dcstreambot",
-                        parse_mode="markdown",
+                        parse_mode="Markdown",
                         disable_web_page_preview=True
                     )
                     return
