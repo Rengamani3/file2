@@ -9,7 +9,7 @@ load_dotenv()
 class Var(object):
     API_ID = int(getenv('API_ID','25079224'))
     API_HASH = str(getenv('API_HASH','0b0a38787359e75477c47ef7c01ea8fd'))
-    BOT_TOKEN = str(getenv('BOT_TOKEN','6077258187:AAHgmHEAyS2XXxCXTNrKyu-lcZN5cgH0TF0'))
+    BOT_TOKEN = str(getenv('BOT_TOKEN','6226448350:AAF0SnZYDnQtHuNsTAUxplV_WOnJWeMZDvg'))
     SESSION_NAME = str(getenv('SESSION_NAME', 'F2LxBot'))
     SLEEP_THRESHOLD = int(getenv('SLEEP_THRESHOLD', '60'))
     WORKERS = int(getenv('WORKERS', '4'))
