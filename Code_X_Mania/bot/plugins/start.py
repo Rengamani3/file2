@@ -85,7 +85,7 @@ async def start(b, m):
                     await b.send_message(
                         chat_id=m.chat.id,
                         text="**Sᴏʀʀʏ Sɪʀ, Yᴏᴜ ᴀʀᴇ Bᴀɴɴᴇᴅ ᴛᴏ ᴜsᴇ ᴍᴇ. Qᴜɪᴄᴋʟʏ ᴄᴏɴᴛᴀᴄᴛ** @Dcstreambot",
-                        parse_mode=ParseMode.Markdown,
+                        parse_mode=ParseMode.MARKDOWN,
                         disable_web_page_preview=True
                     )
                     return
@@ -104,14 +104,14 @@ async def start(b, m):
                             ]
                         ]
                     ),
-                    parse_mode=ParseMode.Markdown
+                    parse_mode=ParseMode.MARKDOWN
                 )
                 return
             except Exception:
                 await b.send_message(
                     chat_id=m.chat.id,
                     text="**Sᴏᴍᴇᴛʜɪɴɢ ᴡᴇɴᴛ Wʀᴏɴɢ. Cᴏɴᴛᴀᴄᴛ ᴍᴇ** [Dcstreambot](https://t.me/Dcstreambot).",
-                    parse_mode=ParseMode.Markdown,
+                    parse_mode=ParseMode.MARKDOWN,
                     disable_web_page_preview=True)
                 return
 
@@ -195,14 +195,14 @@ async def help_handler(bot, message):
                         ]
                     ]
                 ),
-                parse_mode=ParseMode.Markdown
+                parse_mode=ParseMode.MARKDOWN
             )
             return
         except Exception:
             await bot.send_message(
                 chat_id=message.chat.id,
                 text="__Sᴏᴍᴇᴛʜɪɴɢ ᴡᴇɴᴛ Wʀᴏɴɢ. Cᴏɴᴛᴀᴄᴛ ᴍᴇ__ Dcstreambot](https://t.me/Dcstreambot).",
-                parse_mode=ParseMode.Markdown,
+                parse_mode=ParseMode.MARKDOWN,
                 disable_web_page_preview=True)
             return
    
