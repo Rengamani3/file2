@@ -3,7 +3,7 @@ from pyrogram import Client
 from ..vars import Var
 
 StreamBot = Client(
-    SESSION_NAME='F2LxBot',
+    name='F2LxBot',
     api_id=Var.API_ID,
     api_hash=Var.API_HASH,
     bot_token=Var.BOT_TOKEN,
